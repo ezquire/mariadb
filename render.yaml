@@ -5,7 +5,7 @@ services:
   env: docker
   disk:
     name: mariadb
-    mountPath: /var/lib/mariadb
+    mountPath: /var/lib/mysql
     sizeGB: 10
   envVars:
   - fromGroup: mariadb
@@ -13,11 +13,11 @@ services:
 envVarGroups:
 - name: mariadb
   envVars:
-  - key: MARIADB_DATABASE
+  - key: MYSQL_DATABASE
     value: mariadb
-  - key: MARIADB_USER
+  - key: MYSQL_USER
     value: mariadb
-  - key: MARIADB_PASSWORD
+  - key: MYSQL_PASSWORD
     generateValue: true
-  - key: MARIADB_ROOT_PASSWORD
+  - key: MYSQL_ROOT_PASSWORD
     generateValue: true
